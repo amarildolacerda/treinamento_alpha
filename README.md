@@ -1,5 +1,10 @@
 # alpha
 
+* carregando chrome com Gitpod
+  
+* instalar no chrome: Dart Debug extension
+    Quando aparecer uma pagina em branco, 
+    clique no botão -> Dart Debug extension
 
 
 * Instruções básicas 
@@ -24,13 +29,15 @@ controls_web:
       path: controls_web
 
 
+* reponsivo
 ****************************************************************
  ResponsiveInfo responsive;
 
   ThemeData theme;
 
 ****************************************************************
-// declarando o theme
+
+* declarando o theme
 
 DynamicTheme(
         initial: Brightness.light,
