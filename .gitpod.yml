@@ -1,0 +1,42 @@
+image:
+  file: .gitpod.Dockerfile
+
+ports:
+  - port: 6080
+    onOpen: "ignore"
+  - port: 33501
+    onOpen: "open-browser"
+
+tasks:
+  - before: |
+      export PATH=$FLUTTER_HOME/bin:$ANDROID_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
+      mkdir -p /home/gitpod/.android
+      touch /home/gitpod/.android/repositories.cfg
+    init: |
+
+      # Install Chrome
+      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      dpkg -i google-chrome-stable_current_amd64.deb && apt-get -fy install
+      echo y | rm -f  google-chrome-stable_current_amd64.deb
+      echo y | rm -f core*
+
+    command: |
+      echo "Ready to go!"
+  - command: |
+      cd /workspace/console
+      export PATH=$FLUTTER_HOME/bin:$ANDROID_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
+      flutter config --enable-web
+      flutter upgrade
+      flutter doctor
+      #flutter pub get
+
+      #flutter doctor
+      echo "Ready to start!"
+
+  #- command: "/usr/bin/google-chrome http://localhost:33501"
+
+vscode:
+  extensions:
+    - Dart-Code.dart-code@3.9.0:umvoqCQMs3NpksmwhVtStw==
+    - Dart-Code.flutter@3.5.0:/kOacEWdiDRLyN/idUiM4A==
+    - Nash.awesome-flutter-snippets@2.0.3:6jLJSOqEGV5k8R0xYG7Oqg==
