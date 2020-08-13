@@ -18,7 +18,7 @@ ENV WINDOW_MANAGER="openbox"
 
 # essential
 RUN apt-get update && \
-    apt-get -y install libcurl3 build-essential libkrb5-dev gcc make gradle openjdk-8-jdk && \
+    apt-get -y install build-essential libkrb5-dev gcc make gradle openjdk-8-jdk && \
     apt-get clean && \
     apt-get -y autoremove
 
