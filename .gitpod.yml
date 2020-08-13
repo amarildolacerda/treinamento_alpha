@@ -9,16 +9,14 @@ ports:
 
 tasks:
   - before: |
-
-
       export PATH=$FLUTTER_HOME/bin:$ANDROID_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
       mkdir -p /home/gitpod/.android
       touch /home/gitpod/.android/repositories.cfg
 
-    #  chmod +x ./flutter_install.sh
-    #  ./flutter_install.sh
 
     init: |
+      chmod +x ./flutter_install.sh
+      ./flutter_install.sh
 
     command: |
       echo "Ready to go!"
