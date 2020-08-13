@@ -12,7 +12,7 @@ tasks:
       export PATH=$FLUTTER_HOME/bin:$ANDROID_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
       mkdir -p /home/gitpod/.android
       touch /home/gitpod/.android/repositories.cfg
-    init: |
+    
 
       # Install Chrome
       wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -40,7 +40,9 @@ tasks:
       flutter config --enable-web
       flutter doctor 
       
-
+    init: |
+    
+    
     command: |
       echo "Ready to go!"
   - command: |
