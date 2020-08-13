@@ -23,7 +23,7 @@ RUN apt-get update && \
     apt-get -y autoremove
 
 # chrome
-RUN apt-get install libgconf2-4 libnss3-1d libxss1
+
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN dpkg -i google-chrome-stable_current_amd64.deb
 
