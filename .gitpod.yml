@@ -13,15 +13,15 @@ tasks:
       mkdir -p /home/gitpod/.android
       touch /home/gitpod/.android/repositories.cfg
 
-
     init: |
+      chmod +x ./run.sh
       chmod +x ./flutter_install.sh
       ./flutter_install.sh
+      ./run.sh
 
     command: |
       echo "Ready to go!"
   - command: |
-      cd /workspace/console
       export PATH=$FLUTTER_HOME/bin:$ANDROID_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
       flutter config --enable-web
       flutter upgrade
@@ -30,6 +30,7 @@ tasks:
 
       #flutter doctor
       echo "Ready to start!"
+      ./run.sh
 
   #- command: "/usr/bin/google-chrome http://localhost:33501"
 
