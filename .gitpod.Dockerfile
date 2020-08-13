@@ -18,10 +18,12 @@ ENV WINDOW_MANAGER="openbox"
 
 # essential
 RUN apt-get update && \
-    apt-get -y install build-essential libkrb5-dev gcc make gradle openjdk-8-jdk && \
+    apt-get -y install libcurl3 build-essential libkrb5-dev gcc make gradle openjdk-8-jdk && \
     apt-get clean && \
     apt-get -y autoremove
 
 # chrome
-RUN apt-get install -y chromium-browser
+RUN apt-get install libgconf2-4 libnss3-1d libxss1
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb
 
