@@ -15,9 +15,8 @@ tasks:
       mkdir -p /home/gitpod/.android
       touch /home/gitpod/.android/repositories.cfg
 
-
-      chmod +x ./flutter_install.sh
-      ./flutter_install.sh
+    #  chmod +x ./flutter_install.sh
+    #  ./flutter_install.sh
 
     init: |
 

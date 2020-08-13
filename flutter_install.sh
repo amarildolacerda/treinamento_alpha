@@ -1,11 +1,5 @@
 #/bin/bash
 
-echo "Install Chrome"
-      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      dpkg -i google-chrome-stable_current_amd64.deb && apt-get -fy install
-      echo y | rm -f  google-chrome-stable_current_amd64.deb
-      echo y | rm -f core*
-
 
 echo "Installing Flutter SDK..."
       cd /workspace && wget -qO flutter_sdk.tar.xz https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_1.20.1-stable.tar.xz && tar -xf flutter_sdk.tar.xz && rm -f flutter_sdk.tar.xz      echo "Installing Android SDK..."
