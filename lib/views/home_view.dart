@@ -17,10 +17,17 @@ class HomeView extends StatelessWidget {
       body: HorizontalTabView(
         choices: [
           TabChoice(
-              icon: Icons.accessible, label: 'Op1', child: ClientesView()),
-          TabChoice(icon: Icons.account_box, label: 'Op2', child: OpcoesPage()),
+              icon: Icons.accessible,
+              label: 'Op1',
+              builder: () => ClientesView()),
+          TabChoice(
+              icon: Icons.account_box,
+              label: 'Op2',
+              builder: () => OpcoesPage()),
         ],
       ),
     );
   }
 }
+
+
