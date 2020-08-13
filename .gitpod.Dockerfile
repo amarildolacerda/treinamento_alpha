@@ -24,4 +24,4 @@ RUN apt-get update && \
 
 COPY flutter_install.sh ./flutter_install.sh
 RUN chmod +x ./flutter_install.sh
-RUN ./flutter_install.sh
+#RUN ./flutter_install.sh
