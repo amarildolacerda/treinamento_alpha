@@ -22,6 +22,3 @@ RUN apt-get update && \
     apt-get -y autoremove
 
 
-COPY flutter_install.sh ./flutter_install.sh
-RUN chmod +x ./flutter_install.sh
-#RUN ./flutter_install.sh
