@@ -48,7 +48,7 @@ packages:
     description:
       path: "controls_data/control_data_platform_android"
       ref: HEAD
-      resolved-ref: d16798ef8590f130ce3bc4e76c338b57f4e2c1ca
+      resolved-ref: "120ea899c6cf2fb195478c77dea36fd1d8603979"
       url: "https://github.com/amarildolacerda/flutter_dart.git"
     source: git
     version: "0.0.1"
@@ -57,7 +57,7 @@ packages:
     description:
       path: "controls_data/control_data_platform_interface"
       ref: HEAD
-      resolved-ref: d16798ef8590f130ce3bc4e76c338b57f4e2c1ca
+      resolved-ref: "120ea899c6cf2fb195478c77dea36fd1d8603979"
       url: "https://github.com/amarildolacerda/flutter_dart.git"
     source: git
     version: "0.0.2"
@@ -66,7 +66,7 @@ packages:
     description:
       path: "controls_data/control_data_platform_web"
       ref: HEAD
-      resolved-ref: d16798ef8590f130ce3bc4e76c338b57f4e2c1ca
+      resolved-ref: "120ea899c6cf2fb195478c77dea36fd1d8603979"
       url: "https://github.com/amarildolacerda/flutter_dart.git"
     source: git
     version: "0.0.1"
@@ -75,7 +75,7 @@ packages:
     description:
       path: "controls_data/control_data_platform_windows"
       ref: HEAD
-      resolved-ref: d16798ef8590f130ce3bc4e76c338b57f4e2c1ca
+      resolved-ref: "120ea899c6cf2fb195478c77dea36fd1d8603979"
       url: "https://github.com/amarildolacerda/flutter_dart.git"
     source: git
     version: "0.0.1"
@@ -84,7 +84,7 @@ packages:
     description:
       path: controls_data
       ref: HEAD
-      resolved-ref: d16798ef8590f130ce3bc4e76c338b57f4e2c1ca
+      resolved-ref: "120ea899c6cf2fb195478c77dea36fd1d8603979"
       url: "https://github.com/amarildolacerda/flutter_dart.git"
     source: git
     version: "0.1.9"
@@ -93,7 +93,7 @@ packages:
     description:
       path: controls_extensions
       ref: HEAD
-      resolved-ref: d16798ef8590f130ce3bc4e76c338b57f4e2c1ca
+      resolved-ref: "120ea899c6cf2fb195478c77dea36fd1d8603979"
       url: "https://github.com/amarildolacerda/flutter_dart.git"
     source: git
     version: "0.0.1"
@@ -102,7 +102,7 @@ packages:
     description:
       path: controls_web
       ref: HEAD
-      resolved-ref: d16798ef8590f130ce3bc4e76c338b57f4e2c1ca
+      resolved-ref: "120ea899c6cf2fb195478c77dea36fd1d8603979"
       url: "https://github.com/amarildolacerda/flutter_dart.git"
     source: git
     version: "0.1.9"
@@ -405,7 +405,7 @@ packages:
       name: url_launcher_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.2"
+    version: "0.1.2+1"
   uuid:
     dependency: transitive
     description:

@@ -6,6 +6,8 @@ import 'package:controls_web/controls/paginated_grid.dart';
 import 'package:controls_web/controls/strap_widgets.dart';
 import 'package:flutter/material.dart';
 
+import 'radio_grouped.dart';
+
 class ClienteGridPage extends StatefulWidget {
   const ClienteGridPage({Key key}) : super(key: key);
 
@@ -16,28 +18,28 @@ class ClienteGridPage extends StatefulWidget {
 bool customColumns = true;
 
 class _ClienteGridPageState extends State<ClienteGridPage> {
+  ValueNotifier<bool> notifier = ValueNotifier<bool>(false);
+  bool canEdit = false;
+  bool canSearch = false;
+  bool showPageNavigatorButtons = false;
+  DataViewerController controller;
+  var source = [
+    {
+      'codigo': 1,
+      "nome": 'Jose Silva',
+      'ender': 'Rua abc,23',
+      'inativo': 'N',
+      'data': DateTime.now()
+    },
+    {
+      'codigo': 2,
+      "nome": 'Roberto Silva',
+      'ender': 'Rua Parque Domingos Luiz, 690',
+      'data': DateTime.now()
+    }
+  ];
   @override
   Widget build(BuildContext context) {
-    ValueNotifier<bool> notifier = ValueNotifier<bool>(false);
-    bool canEdit = false;
-    bool canSearch = false;
-    bool showPageNavigatorButtons = false;
-    DataViewerController controller;
-    var source = [
-      {
-        'codigo': 1,
-        "nome": 'Jose Silva',
-        'ender': 'Rua abc,23',
-        'inativo': 'N',
-        'data': DateTime.now()
-      },
-      {
-        'codigo': 2,
-        "nome": 'Roberto Silva',
-        'ender': 'Rua Parque Domingos Luiz, 690',
-        'data': DateTime.now()
-      }
-    ];
     return Row(
       children: [
         Expanded(
@@ -56,59 +58,81 @@ class _ClienteGridPageState extends State<ClienteGridPage> {
             ),
           ),
         ),
-        Container(
-          width: 200,
-          child: Column(children: [
-            MaskedSwitchFormField(
-              label: 'canEdit',
-              value: canEdit,
-              onChanged: (b) {
-                print(b);
-                canEdit = b;
-                notifier.value = !notifier.value;
-              },
-            ),
-            MaskedSwitchFormField(
-              label: 'canSearch',
-              value: canSearch,
-              onChanged: (b) {
-                print(b);
-                canSearch = b;
-                notifier.value = !notifier.value;
-              },
-            ),
-            MaskedSwitchFormField(
-              label: 'showPageNavigatorButtons',
-              value: showPageNavigatorButtons,
-              onChanged: (b) {
-                showPageNavigatorButtons = b;
-                notifier.value = !notifier.value;
-              },
-            ),
-            MaskedSwitchFormField(
-              label: 'customColumns',
-              value: customColumns,
-              onChanged: (b) {
-                customColumns = b;
-                notifier.value = !notifier.value;
-              },
-            ),
-            StrapButton(
-                text: 'Form Edit',
-                type: StrapButtonType.danger,
-                onPressed: () {
-                  Dialogs.showPage(context,
-                      child: DadosEditDialog(
-                        controller: controller,
-                        row: source[0],
-                      ));
-                }),
-          ]),
-        ),
+        buildContainer(),
       ],
     );
   }
 
+  Widget buildContainer() {
+    return ValueListenableBuilder(
+        valueListenable: notifier,
+        builder: (ctr, b, widget) => Container(
+              width: 300,
+              child: Column(children: [
+                MaskedSwitchFormField(
+                  label: 'canEdit',
+                  value: canEdit,
+                  onChanged: (b) {
+                    print(b);
+                    canEdit = b;
+                    notifier.value = !notifier.value;
+                  },
+                ),
+                MaskedSwitchFormField(
+                  label: 'canSearch',
+                  value: canSearch,
+                  onChanged: (b) {
+                    print(b);
+                    canSearch = b;
+                    notifier.value = !notifier.value;
+                  },
+                ),
+                MaskedSwitchFormField(
+                  label: 'showPageNavigatorButtons',
+                  value: showPageNavigatorButtons,
+                  onChanged: (b) {
+                    showPageNavigatorButtons = b;
+                    notifier.value = !notifier.value;
+                  },
+                ),
+                MaskedSwitchFormField(
+                  label: 'customColumns',
+                  value: customColumns,
+                  onChanged: (b) {
+                    customColumns = b;
+                    notifier.value = !notifier.value;
+                  },
+                ),
+                StrapButton(
+                    text: 'Form Edit',
+                    type: buttonType,
+                    onPressed: () {
+                      Dialogs.showPage(context,
+                          child: DadosEditDialog(
+                            controller: controller,
+                            row: source[0],
+                          ));
+                    }),
+                RadioGrouped(
+                  itemWidth: 150,
+                  selected: buttonType.index,
+                  title: Text('StrapButton - opções para o botão'),
+                  direction: Axis.horizontal,
+                  children: [
+                    for (var item in StrapButtonType.values)
+                      item.toString().split('.')[1],
+                  ],
+                  onChanged: (x) {
+                    buttonType = StrapButtonType.values[x];
+                    print(buttonType);
+                    notifier.value = !notifier.value;
+                  },
+                )
+              ]),
+            ));
+  }
+
+  var buttonType = StrapButtonType.danger;
   List<PaginatedGridColumn> getColumns() {
     return [
       DataViewerColumn(
