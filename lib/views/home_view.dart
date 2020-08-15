@@ -1,11 +1,15 @@
 import 'package:alpha/views/builders/theme_notifier.dart';
 import 'package:alpha/views/clientes/clientes_view.dart';
+import 'package:alpha/views/demos/activity_view.dart';
+import 'package:alpha/views/demos/apliencies_view.dart';
 import 'package:controls_web/controls/horizonta_tab_view.dart';
 import 'package:controls_web/controls/masked_field.dart';
 import 'package:controls_web/controls/tab_choice.dart';
 import 'package:controls_web/themes/themes.dart';
 import 'package:flutter/material.dart';
 
+import 'demos/NoticeView.dart';
+import 'demos/clean_view.dart';
 import 'drawer_view.dart';
 import 'opcoes_page.dart';
 
@@ -52,6 +56,7 @@ class HomeView extends StatelessWidget {
 
               /// menu de navegação esquerdo
               return HorizontalTabView(
+                controller: HorizontalTabViewController(),
                 indicatorColor: !customColor ? null : Colors.red[200],
                 iconColor: !customColor ? null : Colors.blue[400],
                 tabColor: !customColor ? null : Colors.red[100],
@@ -76,6 +81,13 @@ class HomeView extends StatelessWidget {
                       icon: Icons.accessible,
                       label: 'ClientesView',
                       child: ClientesView()),
+                  TabChoice(
+                    label: 'Activity Demo',
+                    child: ActivityView(),
+                  ),
+                  TabChoice(label: 'Appliencies Demo', child: AplienciesView()),
+                  TabChoice(label: 'Clean Demo', child: CleanView()),
+                  TabChoice(label: 'Notice Demo', child: NoticeView()),
                 ],
               );
             }));
