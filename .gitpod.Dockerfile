@@ -16,12 +16,14 @@ RUN apt-get update \
 ENV WINDOW_MANAGER="openbox"
 
 
+# essential
 RUN apt-get update && \
     apt-get -y install build-essential libkrb5-dev gcc make gradle openjdk-8-jdk && \
     apt-get clean && \
     apt-get -y autoremove
 
+# chrome
+RUN apt-get install -y xdg-utils libgbm1 libappindicator3-1 fonts-liberation
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb
 
-COPY flutter_install.sh ./flutter_install.sh
-RUN chmod +x ./flutter_install.sh
-RUN ./flutter_install.sh
