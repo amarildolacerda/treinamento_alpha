@@ -29,7 +29,17 @@ dependencies:
       url: https://github.com/amarildolacerda/flutter_dart.git
       path: controls_web
 
-  # The following adds the Cupertino Icons font to your application.
+  controls_extensions:
+    git:
+      url: https://github.com/amarildolacerda/flutter_dart.git
+      path: controls_extensions
+
+  controls_data:
+    git:
+      url: https://github.com/amarildolacerda/flutter_dart.git
+      path: controls_data
+
+      # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
 

@@ -4,12 +4,15 @@ import 'package:alpha/views/demos/activity_view.dart';
 import 'package:alpha/views/demos/apliencies_view.dart';
 import 'package:controls_web/controls/horizonta_tab_view.dart';
 import 'package:controls_web/controls/masked_field.dart';
+import 'package:controls_web/controls/menu_dialogs.dart';
 import 'package:controls_web/controls/tab_choice.dart';
 import 'package:controls_web/themes/themes.dart';
 import 'package:flutter/material.dart';
 
 import 'demos/NoticeView.dart';
 import 'demos/clean_view.dart';
+import 'demos/grid_responsive.dart';
+import 'demos/slivers_view.dart';
 import 'drawer_view.dart';
 import 'opcoes_page.dart';
 
@@ -44,7 +47,21 @@ class HomeView extends StatelessWidget {
                       ? Brightness.dark
                       : Brightness.light;
                   dynamicTheme.setBrightness(b);
-                })
+                }),
+
+            IconButton(
+                icon: Icon(Icons.more_vert),
+                onPressed: () {
+                  MenuDialog.show(
+                    context,
+                    choices: [
+                      MenuChoice(
+                          icon: Icons.person,
+                          title: 'Clientes',
+                          builder: (ctx) => ClientesView())
+                    ],
+                  );
+                }),
           ],
         ),
         body: StreamBuilder<bool>(
@@ -88,6 +105,13 @@ class HomeView extends StatelessWidget {
                   TabChoice(label: 'Appliencies Demo', child: AplienciesView()),
                   TabChoice(label: 'Clean Demo', child: CleanView()),
                   TabChoice(label: 'Notice Demo', child: NoticeView()),
+                  TabChoice(
+                      label: 'SliverScaffold Demo',
+                      child: SliverScaffoldView()),
+                  TabChoice(
+                    label: 'Responsive Demo',
+                    child: GridResponsiveView(),
+                  ),
                 ],
               );
             }));

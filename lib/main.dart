@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           return (b == Brightness.light)
               ? ThemeData.light().copyWith(
                   primaryColor: Colors.lightBlueAccent,
-                )
+                  scaffoldBackgroundColor: Colors.lightBlue[50])
               : ThemeData.dark();
         },
         builder: (ctx, theme) => MaterialApp(

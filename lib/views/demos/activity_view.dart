@@ -28,13 +28,13 @@ class ActivityView extends StatelessWidget {
                       child: Column(
                     children: [
                       Text('ActivityPanel'),
-                      ActivityAvatar(
-                        icon: Icons.ac_unit,
-                        avatarBackgroudColor: Colors.green,
-                        iconColor: Colors.blue,
-                      ),
                     ],
                   ))),
+            ),
+            ActivityAvatar(
+              icon: Icons.ac_unit,
+              avatarBackgroudColor: Colors.amber,
+              iconColor: Colors.red,
             ),
             Container(
               height: 200,
