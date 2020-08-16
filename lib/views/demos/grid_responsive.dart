@@ -20,7 +20,7 @@ class GridResponsiveView extends StatelessWidget {
         : responsive.isSmall
             ? 3
             : responsive.isMobile ? 5 : responsive.isTablet ? 7 : 9;
-    return ScaffoldLight(
+    return Scaffold(
         appBar: appBarLight(title: Text('app bar light'), actions: [
           Container(
             width: 180,
