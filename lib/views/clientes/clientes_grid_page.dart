@@ -106,6 +106,9 @@ class _ClienteGridPageState extends State<ClienteGridPage> {
                 StrapButton(
                     text: 'Form Edit',
                     type: buttonType,
+                    width: 140,
+                    height: 60,
+                    subtitle: Text(buttonType.toString().split('.')[1]),
                     onPressed: () {
                       Dialogs.showPage(context,
                           child: DadosEditDialog(

@@ -2,6 +2,7 @@ import 'package:alpha/views/builders/theme_notifier.dart';
 import 'package:alpha/views/clientes/clientes_view.dart';
 import 'package:alpha/views/demos/activity_view.dart';
 import 'package:alpha/views/demos/apliencies_view.dart';
+import 'package:alpha/views/demos/light_view.dart';
 import 'package:controls_web/controls/horizonta_tab_view.dart';
 import 'package:controls_web/controls/masked_field.dart';
 import 'package:controls_web/controls/menu_dialogs.dart';
@@ -90,6 +91,7 @@ class HomeView extends StatelessWidget {
 
                 /// opções do menu
                 choices: [
+                  TabChoice(label: 'Light', child: LightView()),
                   TabChoice(
                       icon: Icons.account_box,
                       label: 'OpçõesView',
@@ -99,17 +101,16 @@ class HomeView extends StatelessWidget {
                       label: 'ClientesView',
                       child: ClientesView()),
                   TabChoice(
-                    label: 'Activity Demo',
+                    label: 'Activity ',
                     child: ActivityView(),
                   ),
-                  TabChoice(label: 'Appliencies Demo', child: AplienciesView()),
-                  TabChoice(label: 'Clean Demo', child: CleanView()),
-                  TabChoice(label: 'Notice Demo', child: NoticeView()),
+                  TabChoice(label: 'Appliencies ', child: AplienciesView()),
+                  TabChoice(label: 'Clean ', child: CleanView()),
+                  TabChoice(label: 'Notice ', child: NoticeView()),
                   TabChoice(
-                      label: 'SliverScaffold Demo',
-                      child: SliverScaffoldView()),
+                      label: 'SliverScaffold ', child: SliverScaffoldView()),
                   TabChoice(
-                    label: 'Responsive Demo',
+                    label: 'Responsive ',
                     child: GridResponsiveView(),
                   ),
                 ],
